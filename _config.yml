@@ -1,10 +1,22 @@
-title: "Damian Andrango - Portafolio"
-description: "Portafolio técnico en física aplicada, programación, diseño y electrónica."
-baseurl: ""
+# Site settings
+title: "Damián Andrango – Portafolio"
+description: "Portafolio técnico en física aplicada, electrónica, programación y diseño 3D"
+baseurl: "/public-portfolio"
 url: "https://mdam21.github.io"
-theme: minima
+theme: jekyll-theme-chirpy
 
-# opcional
-
+# Build settings
 markdown: kramdown
-permalink: pretty
+permalink: /:categories/:title/
+
+# Custom Chirpy config (optional enhancements)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Navigation links
+nav:
+  home: /
+  about: /about/
+  projects: /projects/
+  contact: https://and_damian@outlook.com
