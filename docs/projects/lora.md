@@ -8,4 +8,4 @@ permalink: /projects/lora/
 
 Prototipos de sensores ambientales para áreas protegidas usando LoRa y bajo consumo energético.
 
-[Ver código en GitHub](https://github.com/tuusuario/lora-sensors)
+[Ver código en GitHub](https://github.com/mdam21/lora-sensors)

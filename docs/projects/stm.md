@@ -13,4 +13,4 @@ Desarrollo completo de un sistema de medición por corriente túnel inspirado en
 - Control via ESP32 + multiplexor + 3 DACs
 - Amplificación y lógica de control distribuida
 
-[Ver código en GitHub](https://github.com/tuusuario/stm-control)
+[Ver código en GitHub](https://github.com/mdam21/stm-control)
