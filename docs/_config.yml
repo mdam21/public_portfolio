@@ -3,7 +3,7 @@ title: "Damián Andrango – Portafolio"
 description: "Portafolio técnico en física aplicada, electrónica, programación y diseño 3D"
 baseurl: "/public-portfolio"
 url: "https://mdam21.github.io"
-theme: jekyll-theme-chirpy
+theme: minima
 
 # Build settings
 markdown: kramdown
