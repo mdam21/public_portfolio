@@ -20,3 +20,10 @@ nav:
   about: /about/
   projects: /projects/
   contact: https://and_damian@outlook.com
+
+sass:
+  style:compressed
+
+include:
+  - assets
+

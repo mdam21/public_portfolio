@@ -1,22 +1,23 @@
 ---
 layout: home
-title: "Bienvenido"
+title: Bienvenido
 ---
 
-# 👋 ¡Hola! Soy Damián Andrango
+# 👋 Hola, soy Damián Andrango
 
-Físico especializado en física aplicada con experiencia en:
-
-- Programación científica y automatización
-- Electrónica y mecatrónica aplicada
-- Diseño 3D y fabricación digital
-- Prototipado rápido con Arduino y sensores
+Físico aplicado con experiencia en programación, diseño 3D, electrónica y automatización.
 
 ---
 
-## 🔖 Proyectos Destacados
+## 🚀 Proyectos Destacados
 
-<div class="buttons">
-  <a class="button" href="/projects/stm/">Sistema de Medición tipo STM</a>
-  <a class="button" href="/projects/lora/">Sensores remotos con LoRa</a>
-</div>
+<a class="button" href="projects/stm.html">Sistema STM</a>
+<a class="button" href="projects/lora.html">Red LoRa</a>
+<a class="button" href="projects/monkeys.html">Simulación en Julia</a>
+
+---
+
+## 📬 Contacto
+
+[Email](mailto:tu-email@ejemplo.com) · [LinkedIn](https://linkedin.com/in/tuusuario)
+

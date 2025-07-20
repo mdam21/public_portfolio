@@ -2,6 +2,7 @@
 layout: page
 title: "Sobre mí"
 permalink: /about/
+<link rel="stylesheet" href="assets/css/style.css">
 ---
 
 ## Sobre mí
