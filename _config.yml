@@ -1,0 +1,10 @@
+title: "Damian Andrango - Portafolio"
+description: "Portafolio técnico en física aplicada, programación, diseño y electrónica."
+baseurl: ""
+url: "https://mdam21.github.io"
+theme: minima
+
+# opcional
+
+markdown: kramdown
+permalink: pretty
