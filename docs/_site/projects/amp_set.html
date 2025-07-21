@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ampliación de Set de Imágenes | Damián Andrango – Portafolio</title>
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Ampliación de Set de Imágenes | Damián Andrango – Portafolio</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Ampliación de Set de Imágenes" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Física aplicada - Electrónica - Programación - Diseño 3D" />
+<meta property="og:description" content="Física aplicada - Electrónica - Programación - Diseño 3D" />
+<link rel="canonical" href="http://localhost:4000/public-portfolio/projects/amp_set" />
+<meta property="og:url" content="http://localhost:4000/public-portfolio/projects/amp_set" />
+<meta property="og:site_name" content="Damián Andrango – Portafolio" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Ampliación de Set de Imágenes" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Física aplicada - Electrónica - Programación - Diseño 3D","headline":"Ampliación de Set de Imágenes","url":"http://localhost:4000/public-portfolio/projects/amp_set"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/public-portfolio/assets/css/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <img src="/public-portfolio/assets/img/avatar.png" alt="Damián Andrango" class="avatar">
+      <h1>Damián Andrango</h1>
+      <nav>
+        <ul>
+          <li><a href="/public-portfolio/#inicio">Inicio</a></li>
+          <li><a href="/public-portfolio/#sobremi">Sobre mí</a></li>
+          <li><a href="/public-portfolio/#proyectos">Proyectos</a></li>
+          <li><a href="/public-portfolio/#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="content">
+      <h1 id="ampliación-de-set-de-imágenes-para-entrenamiento-de-llm">Ampliación de Set de Imágenes para Entrenamiento de LLM</h1>
+
+<p>Este proyecto fue desarrollado con el objetivo de generar un conjunto de imágenes ampliado, con diversidad visual significativa, para entrenar modelos de lenguaje multimodal para la empresa <strong>TALOV</strong>. Se basa en un pipeline de procesamiento que aplica transformaciones configurables sobre imágenes RGB, siguiendo lineamientos y recomendaciones comunes de plataformas como Roboflow, pero evitando sus errores comunes a través de una implementación personalizada.</p>
+
+<p>El sistema permite ampliar datasets de forma controlada mediante filtros ajustables, y finaliza con una consolidación automática de imágenes y anotaciones, listas para su uso en entrenamiento.</p>
+
+<hr />
+
+<h2 id="-procesamiento-y-filtros-aplicados">🧪 Procesamiento y filtros aplicados</h2>
+
+<div class="content-with-image">
+  <div class="text-block">
+    <p>
+      El script principal `run_img_amp.py` aplica un conjunto de filtros como desenfoque, contraste, brillo, recorte, rotación, saturación, ruido, exposición, efectos sepia, escala de grises, flipping, entre otros. También incluye combinaciones de filtros para ampliar rápidamente el dataset. Originalmente se trataron sets de 200imagenes realizando una ampliacion a 4000 imágenes, trabajando bajo mas de 80 sets distintos generando mas de 300 000 imagenes para alimentar la red neuronal.
+    </p>
+  </div>
+  <div class="image-block">
+    <img src="/public-portfolio/assets/img/filtros_amp.jpg" alt="Ejemplo de filtros aplicados" />
+  </div>
+</div>
+
+<hr />
+
+<details>
+  <summary> 🔧 Filtros disponibles (20 principales) </summary>
+  <pre>
+- **Blur Gaussiano** (`blur_sigma`)
+- **Detector de bordes Canny** (`thres1`, `thres2`)
+- **Ajuste de brillo y contraste**
+- **Recorte y cutout (oclusiones)**
+- **Desenfoque selectivo por umbral**
+- **Transformación elástica**
+- **Exposición**
+- **Volteo horizontal / vertical**
+- **Escala de grises parcial o total**
+- **Hue, Saturación y Ruido**
+- **Rotación**
+- **Filtro Sepia personalizado**
+- **Detección de bordes Sobel**
+- **Filtros mixtos:**
+  - Blur + Escala de grises
+  - Contraste + Brillo
+  - Saturación + Brillo
+
+  </pre>
+</details>
+
+<hr />
+
+<h2 id="estructura">⚙️ Estructura del Proyecto</h2>
+
+<div class="tree-diagram">
+amp_img/
+├── ampliacion_lib/        # Librerías de filtros personalizados
+├── data/
+│   ├── input_images/      # Imágenes originales
+│   ├── processed_images/  # Imágenes ampliadas
+│   └── process_changed/   # Proceso intermedio
+├── run_img_amp.py         # Script principal
+├── mixture.py             # Consolidación de sets
+└── README.md
+</div>
+<hr />
+
+<h2 id="-consolidación-y-anotaciones">📦 Consolidación y anotaciones</h2>
+<p>Cuando ya se amplian las imagenes tomamos un segundo script <strong>mixture.py</strong> que permite combinar multiples sets con sus respectivas anotaciones en sus respectivos .json en un set ampliado con un solo set.</p>
+
+<p>Este proceso permite generar datasets homogeneos que cumplan con requerimentos de entrada de modelos como YOLO, DETR, o frameworks de RLHF multimodal con enfoque en personas discapacitadas como se busca hacer en TALOV inc.</p>
+
+<hr />
+
+<h2 id="-aplicaciones">💡 Aplicaciones</h2>
+<ul>
+  <li>Entrenamiento de modelos de visión por computadora</li>
+  <li>Aumento de imágenes para alimentar redes de imagenes profundo</li>
+  <li>Preparación de datasets robustos ante ruidos, rotación y cambios de iluminación.</li>
+  <li>Entrenamiento multimodal en modelos de LLM qeu incluyen entradas visuales.</li>
+</ul>
+
+<hr />
+<p><a href="https://github.com/mdam21/amp_images">🔗 Ver código en GitHub</a></p>
+
+    </main>
+  </div>
+  <footer class="site-footer">
+    © 2025 Damián Andrango – Portafolio
+  </footer>
+</body>
+</html>

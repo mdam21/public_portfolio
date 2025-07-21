@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Autocompletador de Formularios (auto_ans_mdam) | Damián Andrango – Portafolio</title>
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Autocompletador de Formularios (auto_ans_mdam) | Damián Andrango – Portafolio</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Autocompletador de Formularios (auto_ans_mdam)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Física aplicada - Electrónica - Programación - Diseño 3D" />
+<meta property="og:description" content="Física aplicada - Electrónica - Programación - Diseño 3D" />
+<link rel="canonical" href="http://localhost:4000/public-portfolio/projects/auto_ans.html" />
+<meta property="og:url" content="http://localhost:4000/public-portfolio/projects/auto_ans.html" />
+<meta property="og:site_name" content="Damián Andrango – Portafolio" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Autocompletador de Formularios (auto_ans_mdam)" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Física aplicada - Electrónica - Programación - Diseño 3D","headline":"Autocompletador de Formularios (auto_ans_mdam)","url":"http://localhost:4000/public-portfolio/projects/auto_ans.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/public-portfolio/assets/css/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <img src="/public-portfolio/assets/img/avatar.png" alt="Damián Andrango" class="avatar">
+      <h1>Damián Andrango</h1>
+      <nav>
+        <ul>
+          <li><a href="/public-portfolio/#inicio">Inicio</a></li>
+          <li><a href="/public-portfolio/#sobremi">Sobre mí</a></li>
+          <li><a href="/public-portfolio/#proyectos">Proyectos</a></li>
+          <li><a href="/public-portfolio/#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="content">
+      <h1 id="-autocompletador-de-formularios--auto_ans_mdam">🧠 Autocompletador de Formularios – <code class="language-plaintext highlighter-rouge">auto_ans_mdam</code></h1>
+
+<p>Este proyecto nace como una herramienta experimental para <strong>automatizar el llenado de formularios tipo test</strong>, inicialmente desarrollada para pruebas de nivel de inglés.</p>
+
+<p>Se combina <strong>scraping de contenido</strong>, <strong>detección automática de patrones de respuesta</strong> y <strong>simulación de entrada humana</strong> para lograr un autollenado eficaz, casi imperceptible.</p>
+
+<hr />
+
+<h2 id="️-tecnologías-usadas">⚙️ Tecnologías usadas</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Selenium</code> para navegación y control del navegador</li>
+  <li><code class="language-plaintext highlighter-rouge">PyAutoGUI</code> para movimientos y simulaciones visuales</li>
+  <li><code class="language-plaintext highlighter-rouge">pytesseract</code> y OCR para detección en pantalla <em>(opcional en algunas versiones)</em></li>
+  <li>Automatización de flujos de click + teclado</li>
+  <li>Interfaz visual para seleccionar tipo de test</li>
+</ul>
+
+<hr />
+
+<h2 id="-motivación">💡 Motivación</h2>
+
+<p>El proyecto nació de una necesidad informal de simplificar tests repetitivos. Su utilidad se expandió a múltiples páginas web que compartían estructuras similares de formularios con selección múltiple, tiempos límite, y validaciones ocultas.</p>
+
+<p>Fue una <strong>exploración técnica y ética</strong> sobre la capacidad de los bots para imitar el comportamiento humano en plataformas web educativas.</p>
+
+<hr />
+
+<h2 id="-estado-actual">🧪 Estado actual</h2>
+
+<ul>
+  <li>Funciona con varios sitios conocidos con formularios de inglés</li>
+  <li>Permite definir patrones de respuestas</li>
+  <li>Tiene detección básica de errores en pantalla</li>
+  <li>Modular y fácil de extender a nuevos tipos de test</li>
+</ul>
+
+<hr />
+
+<h2 id="-estructura-del-código">📂 Estructura del código</h2>
+<p>auto_ans_mdam/
+├── bot.py # Lógica de navegación y llenado
+├── config.json # Configuración de patrones
+├── visual_mode.py # Control visual y simulación
+├── tests/ # Pruebas unitarias
+├── README.md</p>
+
+<hr />
+
+<h2 id="-próximos-pasos">🚀 Próximos pasos</h2>
+
+<ul>
+  <li>Modularizar completamente en una clase Python</li>
+  <li>Agregar un modo headless controlado por CLI</li>
+  <li>Incluir logging de resultados y tiempos</li>
+</ul>
+
+<hr />
+
+<h2 id="-repositorio">🔗 Repositorio</h2>
+
+<p><a href="https://github.com/mdam21/auto_ans_mdam">Ver código en GitHub</a></p>
+
+    </main>
+  </div>
+  <footer class="site-footer">
+    © 2025 Damián Andrango – Portafolio
+  </footer>
+</body>
+</html>

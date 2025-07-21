@@ -40,7 +40,10 @@ a.button:hover {
 
 .layout {
   display: flex;
-  min-height: 100vh;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .sidebar {
@@ -96,5 +99,45 @@ a.button:hover {
 .content {
   flex: 1;
   padding: 40px;
-  max-width: 900px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.content-with-image {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.text-block{
+  flex: 2;
+}
+
+.image-block{
+  flex: 1;
+  min-width: 200px;
+}
+
+.image-block img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tree-diagram {
+  font-family: monospace;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  white-space: pre;
 }
