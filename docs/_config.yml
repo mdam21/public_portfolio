@@ -1,12 +1,16 @@
 # Site settings
 title: "Damián Andrango – Portafolio"
-description: "Portafolio técnico en física aplicada, electrónica, programación y diseño 3D"
+description: "Física aplicada - Electrónica - Programación - Diseño 3D"
 baseurl: "/public-portfolio"
 url: "https://mdam21.github.io"
-theme: minima
+theme: "minima"
+
+# Include CSS
+include:
+  - assets/css
 
 # Build settings
-markdown: kramdown
+markdown: "kramdown"
 permalink: /:categories/:title/
 
 # Custom Chirpy config (optional enhancements)
@@ -22,7 +26,7 @@ nav:
   contact: https://and_damian@outlook.com
 
 sass:
-  style:compressed
+  style: "compressed"
 
 include:
   - assets

@@ -1,12 +1,9 @@
 ---
 layout: page
 title: "Sobre mí"
-permalink: /about/
-<link rel="stylesheet" href="assets/css/style.css">
+permalink: /about.html
 ---
-
-## Sobre mí
-
+s
 Soy Damián Andrango, físico especializado en física aplicada con experiencia transversal en:
 
 - Programación (Python, Julia, C para microcontroladores)

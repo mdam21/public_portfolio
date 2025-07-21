@@ -2,16 +2,30 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page.title }} | {{ site.title }}</title>
   {% seo %}
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
-  {% include header.html %}
-  <main class="container">
-    {{ content }}
-  </main>
+  <div class="layout">
+    <aside class="sidebar">
+      <img src="{{ '/assets/img/avatar.png' | relative_url }}" alt="Damián Andrango" class="avatar">
+      <h1>Damián Andrango</h1>
+      <nav>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#sobremi">Sobre mí</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="content">
+      {{ content }}
+    </main>
+  </div>
   <footer class="site-footer">
     © {{ site.time | date: '%Y' }} {{ site.title }}
   </footer>

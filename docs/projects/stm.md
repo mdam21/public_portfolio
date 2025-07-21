@@ -1,7 +1,7 @@
 ---
-layout: page
-title: "Sistema de Medición tipo STM"
-permalink: /projects/stm/
+layout: default
+title: "Sistema de Medición  STM"
+permalink: /projects/stm.html
 ---
 
 # Sistema de Medición tipo STM
