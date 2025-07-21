@@ -14,7 +14,7 @@ Además, el espacio sirvió como una introducción al **prototipado funcional de
 
 ## 🎯 Objetivo del Taller
 
-> Acercar conceptos de física aplicada —en especial óptica geométrica, reflexión y refracción— mediante la construcción experimental de telescopios, utilizando herramientas modernas como **SolidWorks** (y sus distintos módulos) y **Inkscape** para el diseño vectorial destinado a corte láser.
+> Acercar conceptos de física aplicada —en especial óptica geométrica, reflexión y refracción— mediante la construcción experimental de telescopios, utilizando modelado asistido por computadora como **SolidWorks**, con sus distintos módulos y usar **Inkscape** para el diseño vectorial destinado a maquinado CNC como corte láser.
 
 ---
 
