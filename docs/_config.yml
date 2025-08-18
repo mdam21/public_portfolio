@@ -1,9 +1,12 @@
 # Site settings
 title: "Damián Andrango – Portafolio"
-description: "Física aplicada - Electrónica - Programación - Diseño 3D"
+description: "Físico aplicado - Electrónica - Programación - Diseño 3D"
 baseurl: "/public_portfolio"
 url: "https://mdam21.github.io"
 theme: "minima"
+
+# imagen destacada para redes
+image: "/public_portfolio/assets/img/avatar.png"
 
 # Include CSS
 include:

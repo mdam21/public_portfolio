@@ -4,12 +4,14 @@ title: "Sobre mí"
 permalink: /about.html
 ---
 
-Soy Damián Andrango, físico especializado en física aplicada con experiencia transversal en:
+Mi nombre es Mario Damián Andrango, soy físico especializado en física aplicada, con basta experciencia en distintos proyectos:
 
 - Programación (Python, Julia, C para microcontroladores)
+- Electricidad Residencial y Medio Voltaje
 - Electrónica digital y analógica
-- Diseño CAD (SolidWorks, FreeCAD)
-- Fabricación digital (impresión 3D, corte láser, CNC)
-- Scriping en Ubuntu y automatización de tareas
+- Diseño CAD y gráficos vectoriales (SolidWorks, Blender, InkScape)
+- Fabricación digital (impresión 3D, corte láser, CNC, corte plasma)
+- Terminal de Linux - Ubuntu 
+- Automatización de tareas repetitivas mediante código
 
-Estoy siempre buscando aprender nuevas tecnologías y resolver problemas complejos con soluciones innovadoras.
+Como físico aplicado, con experiencia en investigación siempre estoy buscando mantenerme a la vanguardia de las tecnologías para resolver problemas usando soluciones innovadoras. 
