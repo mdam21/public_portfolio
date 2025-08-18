@@ -13,7 +13,7 @@ title: Damián Andrango - Portafolio
 
 --- 
 
-## 🧑‍🔬 Sobre mí {#sobremi}
+##  Sobre mí {#sobremi}
 
 Soy un físico aplicado con sólida experiencia en:
 
@@ -31,7 +31,7 @@ He trabajado en sectores diversos: educación, manufactura, ciencia aplicada, te
 
 ---
 
-## 🚀 Proyectos Destacados {#proyectos}
+## Proyectos Destacados {#proyectos}
 
 <div class="project-buttons">
   <a class="button" href="projects/stm.html">Sistema STM</a>
@@ -50,7 +50,7 @@ He trabajado en sectores diversos: educación, manufactura, ciencia aplicada, te
 
 ---
 
-## 🧰 Habilidades Técnicas {#habilidades}
+## Habilidades Técnicas {#habilidades}
 
 
 - **Lenguajes de programación:** Python, C++, C, Shell, SQL, R, LaTeX.
@@ -62,7 +62,7 @@ He trabajado en sectores diversos: educación, manufactura, ciencia aplicada, te
 x
 ---
 
-## 🎓 Formación Académica {#formacion}
+## Formación Académica {#formacion}
 
 - **Yachay Tech University** – Física Aplicada (2018 – 2025)
 - **SECAP** – Técnico en Mantenimiento de Computadoras (2014–2015)
@@ -78,7 +78,7 @@ x
 
 ---
 
-## 📬 Contacto {#contacto}
+## Contacto {#contacto}
 
 [<i class="fab fa-linkedin"></i> LinkedIn](https://linkedin.com/in/mdamian-andrango) ·  
 [<i class="fab fa-github"></i> GitHub](https://github.com/mdam21) ·  
