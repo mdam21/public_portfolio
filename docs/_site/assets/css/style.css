@@ -99,7 +99,7 @@ a.button:hover {
 .qr_code{
   width: 120px;
   height: 120px;
-  border-radius: 50%;
+  border-radius: 0%;
   object-fit: cover;
   border: 3px solid #a4b8c5;
   position: sticky;
@@ -161,7 +161,7 @@ html {
 
 .header-img {
   width: 100%;
-  height: auto;
+  height: 250px;
   margin-bottom: 2rem;
   border-radius: 12px;
   object-fit: cover;

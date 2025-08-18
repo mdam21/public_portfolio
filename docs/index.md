@@ -7,23 +7,25 @@ title: Damián Andrango - Portafolio
 
 <section id="inicio" class="intro">
   <img src="assets/img/banner.png" alt="Encabezado del portafolio de Damián Andrango" class="header-img">
-  <h1>👋 Hola, soy Damián Andrango</h1>
+  <h1> Hola, mi nombre es Damián Andrango</h1>
   <p>Físico aplicado con experiencia en ingeniería práctica, tecnologías emergentes y automatización. Apasionado por combinar ciencia, diseño, hardware y software para resolver problemas reales de forma eficiente e innovadora. </p>
 </section>
 
----
+--- 
 
 ## 🧑‍🔬 Sobre mí {#sobremi}
 
 Soy un físico aplicado con sólida experiencia en:
 
-- Sistemas eléctricos residenciales y mediana industria. Análisis de planos y distribución de cargas.
-- Programación en general en Python (desarrollo de programas específicos/juegos/simuladores).
+
+- Programación en general en Python (desarrollo de programas de inventario/juegos/simuladores), enfoque en imaging, data analysis e Inteligencia Artificial.
 - Automatización de sistemas con microcontroladores (Arduino, ESP32, Raspberry Pi).
 - Electrónica de diagnóstico, diseño de PCBs, sensores y controladores.
-- Programación en Python, C++, Shell, con enfoque en análisis de datos e IA.
-- Diseño y prototipado con herramientas como SolidWorks, impresión 3D y corte láser.
-- Instalaciones eléctricas residenciales y comerciales, sistemas de CCTV, porteros eléctricos y cableado estructurado.
+- Programación en C++, Shell, con enfoque en automatizaciones.
+- Diseño y prototipado con herramientas como SolidWorks, InkScape, Blender, impresión 3D y corte láser.
+- Instalaciones eléctricas media y baja tensión, sistemas de CCTV, porteros eléctricos y cableado estructurado. Además de análisis de planos y distribución de cargas.
+- Desarrollo de esquemáticos para circuitos IoT que involucran electrónica analógica y digital.
+- Talleres STEM que de involucran desarrollo de productos tangibles siguiendo esquemas de prototipado.
 
 He trabajado en sectores diversos: educación, manufactura, ciencia aplicada, tecnología asistiva y divulgación científica.
 
@@ -51,8 +53,8 @@ He trabajado en sectores diversos: educación, manufactura, ciencia aplicada, te
 ## 🧰 Habilidades Técnicas {#habilidades}
 
 
-- **Instalaciones eléctricas:** Baja y media tensión, planos eléctricos, CCTV, intercomunicadores, cableado estructurado.
 - **Lenguajes de programación:** Python, C++, C, Shell, SQL, R, LaTeX.
+- **Instalaciones eléctricas:** Baja y media tensión, planos eléctricos, CCTV, intercomunicadores, cableado estructurado.
 - **Electrónica:** Diseño de circuitos, PCBs, sensores, prototipado rápido, SMD, soldadura (cautín y pistola de calor), controladores PID.
 - **Microcontroladores y automatización:** Arduino, ESP32, Raspberry Pi, IoT, visión por computadora, agentes IA.
 - **Diseño y prototipado:** SolidWorks, InkScape, impresión 3D, CNC, chapa metálica, corte láser.
@@ -71,7 +73,8 @@ x
 - Análisis de Datos con Python – FreeCodeCamp (2024)  
 - Automatización e IoT – Cisco (2024)  
 - Web Scraping y Automatización – TAU (2024)  
-- SolidWorks Avanzado – Yachay Tech (2022)  
+- SolidWorks – Yachay Tech (2022)  
+- Imaging, Machine Learning, IA – Yachay Tech (2025)
 
 ---
 

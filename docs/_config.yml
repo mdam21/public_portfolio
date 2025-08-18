@@ -6,7 +6,7 @@ url: "https://mdam21.github.io"
 theme: "minima"
 
 # imagen destacada para redes
-image: "/public_portfolio/assets/img/avatar.png"
+image: "/public_portfolio/assets/img/avatar.jpeg"
 
 # Include CSS
 include:
