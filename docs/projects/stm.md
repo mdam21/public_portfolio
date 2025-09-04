@@ -4,7 +4,7 @@ title: "Sistema de Medición STM"
 permalink: /projects/stm.html
 ---
 
-# Sistema de Medición tipo STM
+# Sistema de Medición para estudiar Tunelamiento
 <div class="content-with-image">
   <div class="text-block">
     <p>
@@ -14,14 +14,14 @@ permalink: /projects/stm.html
     </p>
   </div>
   <div class="image-block">
-    <img src="{{ '/assets/img/STM.jpg' | relative_url }}" alt="Fuente simetrica">
+    <img src="{{ '/assets/img/stm/stm.jpeg' | relative_url }}" alt="Fuente simetrica">
   </div>
 </div>
 ---
 
 ## 🧩 Características principales
 
-### 🔌 Fuente de poder simétrica
+### 🔌 Fuente de poder simétrica bajo ruido.
 
 <div class="content-with-image">
   <div class="text-block">
@@ -30,7 +30,7 @@ permalink: /projects/stm.html
     </p>
   </div>
   <div class="image-block">
-    <img src="{{ '/assets/img/fuente_simetrica.jpg' | relative_url }}" alt="Fuente simétrica">
+    <img src="{{ '/assets/img/stm/fuente_simetrica.png' | relative_url }}" alt="Fuente simétrica">
   </div>
 </div>
 
@@ -41,11 +41,13 @@ permalink: /projects/stm.html
 <div class="content-with-image">
   <div class="text-block">
     <p>
-      Construido con el OPA124U en formato SMD, este preamplificador convierte corrientes del orden de nanoamperios en señales de voltaje aprovechables, manteniendo bajo ruido en la etapa inicial.
+      Construido con el OPA124U en formato SMD, este preamplificador convierte corrientes del orden de nanoamperios en señales de voltaje aprovechables, manteniendo bajo ruido en la etapa inicial. Este es el core del dispositivo, se utiliza microelectrónica con una placa acoplada lo más cercana al evento a registrar para reducir pérdidas por ruido.
     </p>
   </div>
   <div class="image-block">
-    <img src="{{ '/assets/img/preamplificador.jpg' | relative_url }}" alt="Preamplificador de transimpedancia">
+    <img src="{{ '/assets/img/stm/preamplificador.png' | relative_url }}" 
+        alt="Preamplificador de transimpedancia"
+        class="zoomable">
   </div>
 </div>
 
@@ -72,7 +74,7 @@ Controlada por un microcontrolador **ESP32**, se conecta a través de un **multi
     </p>
   </div>
   <div class="image-block">
-    <img src="{{ '/assets/img/tornillo_sin_fin.jpg' | relative_url }}" alt="Acercamiento rudo con tornillo sin fin">
+    <img src="{{ '/assets/img/stm/acercamiento.png' | relative_url }}" alt="Acercamiento rudo con tornillo sin fin">
   </div>
 </div>
 

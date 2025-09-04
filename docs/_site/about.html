@@ -37,7 +37,7 @@
           <li><a href="/public_portfolio/#contacto">Contacto</a></li>
         </ul>
       </nav>
-      <img src="/public_portfolio/assets/img/QR.png" alt="QR" class="qr_code">
+<!--      <img src="/public_portfolio/assets/img/QR.png" alt="QR" class="qr_code"> -->
     </aside>
     <main class="content">
       <article class="post">
@@ -70,5 +70,92 @@
   <footer class="site-footer">
     © 2025 Damián Andrango – Portafolio
   </footer>
+
+  
+  <!-- esto es para que las imagenes se puedan abrir-->
+    <!-- Lightbox overlay (una sola vez en el layout) -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="close-btn" aria-label="Cerrar" onclick="closeLightbox()">&times;</button>
+    <button class="prev" aria-label="Anterior" onclick="changeImage(-1)">&#10094;</button>
+    <img id="lightbox-img" src="" alt="">
+    <button class="next" aria-label="Siguiente" onclick="changeImage(1)">&#10095;</button>
+    <div id="lightbox-caption"></div>
+  </div>
+
+  <!-- Lightbox JS genérico para cualquier <img class="zoomable"> -->
+  <script>
+    let zoomableImages = [];
+    let currentIndex = 0;
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // Reúne todas las imágenes que quieras ampliar
+      zoomableImages = Array.from(document.querySelectorAll("img.zoomable"));
+
+      // Agrega manejadores de click
+      zoomableImages.forEach((img, index) => {
+        img.style.cursor = "zoom-in";
+        img.addEventListener("click", () => openLightbox(index));
+        // Accesibilidad con teclado
+        img.setAttribute("tabindex", "0");
+        img.setAttribute("role", "button");
+        img.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            openLightbox(index);
+          }
+        });
+      });
+
+      // Cerrar si se hace click en el fondo oscuro
+      const lb = document.getElementById("lightbox");
+      lb.addEventListener("click", (e) => {
+        if (e.target === lb) closeLightbox();
+      });
+    });
+
+    function openLightbox(index) {
+      currentIndex = index;
+      updateLightbox();
+      const lb = document.getElementById("lightbox");
+      lb.style.display = "flex";
+      lb.setAttribute("aria-hidden", "false");
+      // Evita scroll del body cuando está abierto
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      const lb = document.getElementById("lightbox");
+      lb.style.display = "none";
+      lb.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    function changeImage(step) {
+      if (!zoomableImages.length) return;
+      currentIndex = (currentIndex + step + zoomableImages.length) % zoomableImages.length;
+      updateLightbox();
+    }
+
+    function updateLightbox() {
+      const lightboxImg = document.getElementById("lightbox-img");
+      const caption = document.getElementById("lightbox-caption");
+      const img = zoomableImages[currentIndex];
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt || "";
+      caption.textContent = img.alt || "";
+    }
+
+    // Teclado: ESC cierra, flechas navegan
+    document.addEventListener("keydown", function(e) {
+      const lb = document.getElementById("lightbox");
+      if (lb.style.display === "flex") {
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowLeft") changeImage(-1);
+        if (e.key === "ArrowRight") changeImage(1);
+      }
+    });
+  </script>
+
+
 </body>
 </html>

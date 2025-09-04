@@ -37,14 +37,14 @@
           <li><a href="/public_portfolio/#contacto">Contacto</a></li>
         </ul>
       </nav>
-      <img src="/public_portfolio/assets/img/QR.png" alt="QR" class="qr_code">
+<!--      <img src="/public_portfolio/assets/img/QR.png" alt="QR" class="qr_code"> -->
     </aside>
     <main class="content">
-      <h1 id="-autocompletador-de-formularios--auto_ans_mdam">🧠 Autocompletador de Formularios – <code class="language-plaintext highlighter-rouge">auto_ans_mdam</code></h1>
+      <h1 id="-autocompletador-de-formularios">🧠 Autocompletador de Formularios</h1>
 
-<p>Este proyecto nace como una herramienta experimental para <strong>automatizar el llenado de formularios tipo test</strong>, inicialmente desarrollada para pruebas de nivel de inglés.</p>
+<p>Este proyecto nace como una herramienta experimental para <strong>automatizar el llenado de formularios tipo test</strong>, inicialmente desarrollada para realizar pruebas unitarias de una pagina de cursos de inglés.</p>
 
-<p>Se combina <strong>scraping de contenido</strong>, <strong>detección automática de patrones de respuesta</strong> y <strong>simulación de entrada humana</strong> para lograr un autollenado eficaz, casi imperceptible.</p>
+<p>Se combina <strong>scraping de contenido</strong>, <strong>detección de patrones de respuesta</strong> y <strong>simulación de entrada humana</strong> para lograr un autollenado eficaz observando el comportamiento de la automatizacion en tiempo real.</p>
 
 <hr />
 
@@ -52,8 +52,8 @@
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">Selenium</code> para navegación y control del navegador</li>
-  <li><code class="language-plaintext highlighter-rouge">PyAutoGUI</code> para movimientos y simulaciones visuales</li>
-  <li><code class="language-plaintext highlighter-rouge">pytesseract</code> y OCR para detección en pantalla <em>(opcional en algunas versiones)</em></li>
+  <li><code class="language-plaintext highlighter-rouge">PyAutoGUI</code> para movimientos y simulaciones visuales
+<!-- - `pytesseract` y OCR para detección en pantalla *(opcional en algunas versiones)* --></li>
   <li>Automatización de flujos de click + teclado</li>
   <li>Interfaz visual para seleccionar tipo de test</li>
 </ul>
@@ -64,14 +64,14 @@
 
 <p>El proyecto nació de una necesidad informal de simplificar tests repetitivos. Su utilidad se expandió a múltiples páginas web que compartían estructuras similares de formularios con selección múltiple, tiempos límite, y validaciones ocultas.</p>
 
-<p>Fue una <strong>exploración técnica y ética</strong> sobre la capacidad de los bots para imitar el comportamiento humano en plataformas web educativas.</p>
+<!-- Fue una **exploración técnica y ética** sobre la capacidad de los bots para imitar el comportamiento humano en plataformas web educativas. -->
 
 <hr />
 
 <h2 id="-estado-actual">🧪 Estado actual</h2>
 
 <ul>
-  <li>Funciona con varios sitios conocidos con formularios de inglés</li>
+  <li>Funciona con el sitio original al cual fue enfocado.</li>
   <li>Permite definir patrones de respuestas</li>
   <li>Tiene detección básica de errores en pantalla</li>
   <li>Modular y fácil de extender a nuevos tipos de test</li>
@@ -80,12 +80,15 @@
 <hr />
 
 <h2 id="-estructura-del-código">📂 Estructura del código</h2>
-<p>auto_ans_mdam/
-├── bot.py # Lógica de navegación y llenado
-├── config.json # Configuración de patrones
-├── visual_mode.py # Control visual y simulación
-├── tests/ # Pruebas unitarias
-├── README.md</p>
+
+<div class="tree-diagram">
+auto_answer/
+├── bot.py          # Lógica de navegación y llenado
+├── config.json     # Configuración de patrones
+├── visual_mode.py  # Control visual y simulación
+├── tests/          # Pruebas unitarias
+└── README.md
+</div>
 
 <hr />
 
@@ -108,5 +111,92 @@
   <footer class="site-footer">
     © 2025 Damián Andrango – Portafolio
   </footer>
+
+  
+  <!-- esto es para que las imagenes se puedan abrir-->
+    <!-- Lightbox overlay (una sola vez en el layout) -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="close-btn" aria-label="Cerrar" onclick="closeLightbox()">&times;</button>
+    <button class="prev" aria-label="Anterior" onclick="changeImage(-1)">&#10094;</button>
+    <img id="lightbox-img" src="" alt="">
+    <button class="next" aria-label="Siguiente" onclick="changeImage(1)">&#10095;</button>
+    <div id="lightbox-caption"></div>
+  </div>
+
+  <!-- Lightbox JS genérico para cualquier <img class="zoomable"> -->
+  <script>
+    let zoomableImages = [];
+    let currentIndex = 0;
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // Reúne todas las imágenes que quieras ampliar
+      zoomableImages = Array.from(document.querySelectorAll("img.zoomable"));
+
+      // Agrega manejadores de click
+      zoomableImages.forEach((img, index) => {
+        img.style.cursor = "zoom-in";
+        img.addEventListener("click", () => openLightbox(index));
+        // Accesibilidad con teclado
+        img.setAttribute("tabindex", "0");
+        img.setAttribute("role", "button");
+        img.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            openLightbox(index);
+          }
+        });
+      });
+
+      // Cerrar si se hace click en el fondo oscuro
+      const lb = document.getElementById("lightbox");
+      lb.addEventListener("click", (e) => {
+        if (e.target === lb) closeLightbox();
+      });
+    });
+
+    function openLightbox(index) {
+      currentIndex = index;
+      updateLightbox();
+      const lb = document.getElementById("lightbox");
+      lb.style.display = "flex";
+      lb.setAttribute("aria-hidden", "false");
+      // Evita scroll del body cuando está abierto
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      const lb = document.getElementById("lightbox");
+      lb.style.display = "none";
+      lb.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    function changeImage(step) {
+      if (!zoomableImages.length) return;
+      currentIndex = (currentIndex + step + zoomableImages.length) % zoomableImages.length;
+      updateLightbox();
+    }
+
+    function updateLightbox() {
+      const lightboxImg = document.getElementById("lightbox-img");
+      const caption = document.getElementById("lightbox-caption");
+      const img = zoomableImages[currentIndex];
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt || "";
+      caption.textContent = img.alt || "";
+    }
+
+    // Teclado: ESC cierra, flechas navegan
+    document.addEventListener("keydown", function(e) {
+      const lb = document.getElementById("lightbox");
+      if (lb.style.display === "flex") {
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowLeft") changeImage(-1);
+        if (e.key === "ArrowRight") changeImage(1);
+      }
+    });
+  </script>
+
+
 </body>
 </html>

@@ -25,7 +25,7 @@ Este proyecto integra hardware, firmware y modelado 3D, buscando una alternativa
     </ul>
   </div>
   <div class="image-block">
-    <img src="{{ '/assets/img/hands_piu_box.jpg' | relative_url }}" alt="Caja impresa de Hands_PIU">
+    <img src="{{ '/assets/img/teclado/hands_piu.png' | relative_url }}" alt="Caja impresa de Hands_PIU">
   </div>
 </div>
 

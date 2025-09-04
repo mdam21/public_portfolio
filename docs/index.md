@@ -15,7 +15,7 @@ title: Damián Andrango - Portafolio
 
 ##  Sobre mí {#sobremi}
 
-Soy un físico aplicado con sólida experiencia en:
+Poseo sólida experiencia en:
 
 
 - Programación en general en Python (desarrollo de programas de inventario/juegos/simuladores), enfoque en imaging, data analysis e Inteligencia Artificial.
@@ -34,18 +34,18 @@ He trabajado en sectores diversos: educación, manufactura, ciencia aplicada, te
 ## Proyectos Destacados {#proyectos}
 
 <div class="project-buttons">
-  <a class="button" href="projects/stm.html">Sistema STM</a>
-  <a class="button" href="projects/lora.html">Red LoRa</a>
+  <a class="button" href="projects/stm.html">Sistema de Conductancia Túnel</a>
+<!--  <a class="button" href="projects/lora.html">Red LoRa</a> -->
   <a class="button" href="projects/amp_set">Ampliación de Set de Imágenes</a>
   <a class="button" href="projects/telescope">Telescopios Low-Cost</a>
-  <a class="button" href="projects/vr_physics">VR para Aprendizaje de Física</a>
-  <a class="button" href="projects/hands_piu">Teclado PIU</a>
+<!--  <a class="button" href="projects/vr_physics">VR para Aprendizaje de Física</a>-->
+  <a class="button" href="projects/hands_piu">Teclado 5 teclas</a>
   <a class="button" href="projects/auto_ans">Bot Automatización</a>
   <a class="button" href="projects/scrap_project">Scrapping de Noticias</a>
   <a class="button" href="projects/concrete_printer">Impresora de Concreto</a>
   <a class="button" href="projects/modelados_sw">Modelado CAD</a>
   <a class="button" href="projects/astro_bootcamp">ML clasificando Galaxias</a>
-  <a class="button" href="projects/quantum_conductance">Medición Cuántica de Conductancia</a>
+  <!--<a class="button" href="projects/quantum_conductance">Medición Cuántica de Conductancia</a>-->
 </div>
 
 ---
@@ -84,3 +84,4 @@ x
 [<i class="fab fa-github"></i> GitHub](https://github.com/mdam21) ·  
 [<i class="fas fa-envelope"></i> Email](mailto:and_damian@outlook.com) ·  
 [<i class="fab fa-whatsapp"></i> WhatsApp](https://wa.me/593998227417)
+<!--  -->   

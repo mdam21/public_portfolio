@@ -37,12 +37,12 @@
           <li><a href="/public_portfolio/#contacto">Contacto</a></li>
         </ul>
       </nav>
-      <img src="/public_portfolio/assets/img/QR.png" alt="QR" class="qr_code">
+<!--      <img src="/public_portfolio/assets/img/QR.png" alt="QR" class="qr_code"> -->
     </aside>
     <main class="content">
       <h1 id="ampliación-de-set-de-imágenes-para-entrenamiento-de-llm">Ampliación de Set de Imágenes para Entrenamiento de LLM</h1>
 
-<p>Este proyecto fue desarrollado con el objetivo de generar un conjunto de imágenes ampliado, con diversidad visual significativa, para entrenar modelos de lenguaje multimodal para la empresa <strong>TALOV</strong>. Se basa en un pipeline de procesamiento que aplica transformaciones configurables sobre imágenes RGB, siguiendo lineamientos y recomendaciones comunes de plataformas como Roboflow, pero evitando sus errores comunes a través de una implementación personalizada.</p>
+<p>Este proyecto fue desarrollado con el objetivo de generar un conjunto de imágenes ampliado, con diversidad visual significativa, para entrenar modelos de lenguaje multimodal para la empresa <strong>TALOV</strong>. El codigo consta de tres etapas: (1) conjunto inicial (10 imágenes + CSV), (2) generación de 20 sets (cada uno con 10 imágenes + su CSV), y (3) consolidación final de todas las imágenes en una sola carpeta. Este aplica transformaciones configurables sobre imágenes RGB, siguiendo lineamientos y recomendaciones comunes de plataformas como Roboflow, pero evitando sus errores comunes a través de una implementación personalizada de los filtros a ocupar.</p>
 
 <p>El sistema permite ampliar datasets de forma controlada mediante filtros ajustables, y finaliza con una consolidación automática de imágenes y anotaciones, listas para su uso en entrenamiento.</p>
 
@@ -53,12 +53,42 @@
 <div class="content-with-image">
   <div class="text-block">
     <p>
-      El script principal `run_img_amp.py` aplica un conjunto de filtros como desenfoque, contraste, brillo, recorte, rotación, saturación, ruido, exposición, efectos sepia, escala de grises, flipping, entre otros. También incluye combinaciones de filtros para ampliar rápidamente el dataset. Originalmente se trataron sets de 200imagenes realizando una ampliacion a 4000 imágenes, trabajando bajo mas de 80 sets distintos generando mas de 300 000 imagenes para alimentar la red neuronal.
+      El script principal `run_img_amp.py` aplica un conjunto de filtros como desenfoque, contraste, brillo, recorte, rotación, saturación, ruido, exposición, efectos sepia, escala de grises, flipping, entre otros. También incluye combinaciones de filtros para ampliar rápidamente el dataset. Originalmente se aumentaron sets de 200 imagenes realizando una ampliacion a 4000 imágenes, trabajando bajo mas de 80 sets distintos generando mas de 300 000 imagenes para alimentar la red neuronal.
     </p>
   </div>
   <div class="image-block">
-    <img src="/public_portfolio/assets/img/filtros_amp.jpg" alt="Ejemplo de filtros aplicados" />
+    <img src="/public_portfolio/assets/img/amp/inv_col.png" alt="Ejemplo de filtros aplicados" class="zoomable" />
   </div>
+</div>
+
+<hr />
+
+<h2 id="resumen-visual">🖼️ Resumen visual del pipeline</h2>
+
+<div class="triptych">
+  <figure>
+    <img src="/public_portfolio/assets/img/amp/inicial_10imgs_csv.png" alt="Estado inicial: 10 imágenes y un CSV" class="zoomable" />
+    <figcaption>Inicial — 10 imágenes + CSV</figcaption>
+  </figure>
+
+  <figure>
+    <img src="/public_portfolio/assets/img/amp/intermedio_20sets.png" alt="Intermedio: 20 sets × 10 imágenes y su CSV" class="zoomable" />
+    <figcaption>Intermedio — 20 sets × 10 imgs + CSV</figcaption>
+  </figure>
+
+  <figure>
+    <img src="/public_portfolio/assets/img/amp/final_consolidado.png" alt="Final: todas las imágenes consolidadas" class="zoomable" />
+    <figcaption>Final — consolidado en una carpeta</figcaption>
+  </figure>
+</div>
+
+<!-- Lightbox overlay -->
+<div id="lightbox" class="lightbox">
+  <span class="close-btn" onclick="closeLightbox()">&times;</span>
+  <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+  <img id="lightbox-img" src="" alt="" />
+  <span class="next" onclick="changeImage(1)">&#10095;</span>
+  <div id="lightbox-caption"></div>
 </div>
 
 <hr />
@@ -96,8 +126,9 @@ amp_img/
 ├── ampliacion_lib/        # Librerías de filtros personalizados
 ├── data/
 │   ├── input_images/      # Imágenes originales
-│   ├── processed_images/  # Imágenes ampliadas
-│   └── process_changed/   # Proceso intermedio
+│   └── processed_images/  # Imágenes ampliadas
+│       ├── temp_set/      # Proceso intermedio
+|       └── total_set/     # Set consolidado
 ├── run_img_amp.py         # Script principal
 ├── mixture.py             # Consolidación de sets
 └── README.md
@@ -116,7 +147,7 @@ amp_img/
   <li>Entrenamiento de modelos de visión por computadora</li>
   <li>Aumento de imágenes para alimentar redes de imagenes profundo</li>
   <li>Preparación de datasets robustos ante ruidos, rotación y cambios de iluminación.</li>
-  <li>Entrenamiento multimodal en modelos de LLM qeu incluyen entradas visuales.</li>
+  <li>Entrenamiento multimodal en modelos de LLM que incluyen entradas visuales.</li>
 </ul>
 
 <hr />
@@ -127,5 +158,92 @@ amp_img/
   <footer class="site-footer">
     © 2025 Damián Andrango – Portafolio
   </footer>
+
+  
+  <!-- esto es para que las imagenes se puedan abrir-->
+    <!-- Lightbox overlay (una sola vez en el layout) -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="close-btn" aria-label="Cerrar" onclick="closeLightbox()">&times;</button>
+    <button class="prev" aria-label="Anterior" onclick="changeImage(-1)">&#10094;</button>
+    <img id="lightbox-img" src="" alt="">
+    <button class="next" aria-label="Siguiente" onclick="changeImage(1)">&#10095;</button>
+    <div id="lightbox-caption"></div>
+  </div>
+
+  <!-- Lightbox JS genérico para cualquier <img class="zoomable"> -->
+  <script>
+    let zoomableImages = [];
+    let currentIndex = 0;
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // Reúne todas las imágenes que quieras ampliar
+      zoomableImages = Array.from(document.querySelectorAll("img.zoomable"));
+
+      // Agrega manejadores de click
+      zoomableImages.forEach((img, index) => {
+        img.style.cursor = "zoom-in";
+        img.addEventListener("click", () => openLightbox(index));
+        // Accesibilidad con teclado
+        img.setAttribute("tabindex", "0");
+        img.setAttribute("role", "button");
+        img.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            openLightbox(index);
+          }
+        });
+      });
+
+      // Cerrar si se hace click en el fondo oscuro
+      const lb = document.getElementById("lightbox");
+      lb.addEventListener("click", (e) => {
+        if (e.target === lb) closeLightbox();
+      });
+    });
+
+    function openLightbox(index) {
+      currentIndex = index;
+      updateLightbox();
+      const lb = document.getElementById("lightbox");
+      lb.style.display = "flex";
+      lb.setAttribute("aria-hidden", "false");
+      // Evita scroll del body cuando está abierto
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      const lb = document.getElementById("lightbox");
+      lb.style.display = "none";
+      lb.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    function changeImage(step) {
+      if (!zoomableImages.length) return;
+      currentIndex = (currentIndex + step + zoomableImages.length) % zoomableImages.length;
+      updateLightbox();
+    }
+
+    function updateLightbox() {
+      const lightboxImg = document.getElementById("lightbox-img");
+      const caption = document.getElementById("lightbox-caption");
+      const img = zoomableImages[currentIndex];
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt || "";
+      caption.textContent = img.alt || "";
+    }
+
+    // Teclado: ESC cierra, flechas navegan
+    document.addEventListener("keydown", function(e) {
+      const lb = document.getElementById("lightbox");
+      if (lb.style.display === "flex") {
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowLeft") changeImage(-1);
+        if (e.key === "ArrowRight") changeImage(1);
+      }
+    });
+  </script>
+
+
 </body>
 </html>

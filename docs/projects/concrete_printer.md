@@ -4,7 +4,7 @@ title: Impresora 3D de Concreto – concrete_printer
 permalink: /projects/concrete_printer.html
 ---
 
-# 🏗️ Impresora 3D de Concreto – `concrete_printer`
+# 🏗️ Impresora 3D de Concreto
 
 Este proyecto consistió en el desarrollo de una **impresora 3D funcional para mortero estructural (concreto)**.  
 Participé como el responsable principal del **diseño mecatrónico, modelado CAD y análisis funcional del sistema.**
@@ -49,7 +49,26 @@ Participé como el responsable principal del **diseño mecatrónico, modelado CA
 
 ## 📷 Modelo CAD (vista parcial)
 
-*(Agrega una imagen si lo deseas: `assets/images/concrete_preview.png`)*
 
-```markdown
-![Vista general del modelo CAD (parcial)](/assets/images/concrete_preview.png)
+<div class="triptych">
+  <figure>
+    <img src="{{ '/assets/img/concrete_printer/imp0.png' | relative_url }}"
+         alt="Vista General - Modelo CAD "
+         class='zoomable'>
+    <figcaption>Inicial — 10 imágenes + CSV</figcaption>
+  </figure>
+
+  <figure>
+    <img src="{{ '/assets/img/concrete_printer/imp3.png' | relative_url }}"
+         alt="Vista Detalle 1"
+         class='zoomable'>
+    <figcaption>Vista Detalle 1</figcaption>
+  </figure>
+
+  <figure>
+    <img src="{{ '/assets/img/concrete_printer/imp5.png' | relative_url }}"
+         alt="Vista Detalle 2"
+         class='zoomable'>
+    <figcaption>Vista Detalle 1</figcaption>
+  </figure>
+</div>

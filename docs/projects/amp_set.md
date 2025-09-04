@@ -6,7 +6,7 @@ permalink: /projects/amp_set
 
 # Ampliación de Set de Imágenes para Entrenamiento de LLM
 
-Este proyecto fue desarrollado con el objetivo de generar un conjunto de imágenes ampliado, con diversidad visual significativa, para entrenar modelos de lenguaje multimodal para la empresa **TALOV**. Se basa en un pipeline de procesamiento que aplica transformaciones configurables sobre imágenes RGB, siguiendo lineamientos y recomendaciones comunes de plataformas como Roboflow, pero evitando sus errores comunes a través de una implementación personalizada.
+Este proyecto fue desarrollado con el objetivo de generar un conjunto de imágenes ampliado, con diversidad visual significativa, para entrenar modelos de lenguaje multimodal para la empresa **TALOV**. El codigo consta de tres etapas: (1) conjunto inicial (10 imágenes + CSV), (2) generación de 20 sets (cada uno con 10 imágenes + su CSV), y (3) consolidación final de todas las imágenes en una sola carpeta. Este aplica transformaciones configurables sobre imágenes RGB, siguiendo lineamientos y recomendaciones comunes de plataformas como Roboflow, pero evitando sus errores comunes a través de una implementación personalizada de los filtros a ocupar.
 
 El sistema permite ampliar datasets de forma controlada mediante filtros ajustables, y finaliza con una consolidación automática de imágenes y anotaciones, listas para su uso en entrenamiento.
 
@@ -17,16 +17,56 @@ El sistema permite ampliar datasets de forma controlada mediante filtros ajustab
 <div class="content-with-image">
   <div class="text-block">
     <p>
-      El script principal `run_img_amp.py` aplica un conjunto de filtros como desenfoque, contraste, brillo, recorte, rotación, saturación, ruido, exposición, efectos sepia, escala de grises, flipping, entre otros. También incluye combinaciones de filtros para ampliar rápidamente el dataset. Originalmente se trataron sets de 200imagenes realizando una ampliacion a 4000 imágenes, trabajando bajo mas de 80 sets distintos generando mas de 300 000 imagenes para alimentar la red neuronal.
+      El script principal `run_img_amp.py` aplica un conjunto de filtros como desenfoque, contraste, brillo, recorte, rotación, saturación, ruido, exposición, efectos sepia, escala de grises, flipping, entre otros. También incluye combinaciones de filtros para ampliar rápidamente el dataset. Originalmente se aumentaron sets de 200 imagenes realizando una ampliacion a 4000 imágenes, trabajando bajo mas de 80 sets distintos generando mas de 300 000 imagenes para alimentar la red neuronal.
     </p>
   </div>
   <div class="image-block">
-    <img src="{{ '/assets/img/filtros_amp.jpg' | relative_url }}" alt="Ejemplo de filtros aplicados">
+    <img src="{{ '/assets/img/amp/inv_col.png' | relative_url }}" 
+      alt="Ejemplo de filtros aplicados" 
+      class='zoomable'>
   </div>
 </div>
 
 ---
 
+<h2 id="resumen-visual">🖼️ Resumen visual del pipeline</h2>
+
+<div class="triptych">
+  <figure>
+    <img src="{{ '/assets/img/amp/inicial_10imgs_csv.png' | relative_url }}"
+         alt="Estado inicial: 10 imágenes y un CSV"
+         class='zoomable'>
+    <figcaption>Inicial — 10 imágenes + CSV</figcaption>
+  </figure>
+
+  <figure>
+    <img src="{{ '/assets/img/amp/intermedio_20sets.png' | relative_url }}"
+         alt="Intermedio: 20 sets × 10 imágenes y su CSV"
+         class='zoomable'>
+    <figcaption>Intermedio — 20 sets × 10 imgs + CSV</figcaption>
+  </figure>
+
+  <figure>
+    <img src="{{ '/assets/img/amp/final_consolidado.png' | relative_url }}"
+         alt="Final: todas las imágenes consolidadas"
+         class='zoomable'>
+    <figcaption>Final — consolidado en una carpeta</figcaption>
+  </figure>
+</div>
+
+<!-- Lightbox overlay -->
+<div id="lightbox" class="lightbox">
+  <span class="close-btn" onclick="closeLightbox()">&times;</span>
+  <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+  <img id="lightbox-img" src="" alt="">
+  <span class="next" onclick="changeImage(1)">&#10095;</span>
+  <div id="lightbox-caption"></div>
+</div>
+
+
+
+
+---
 
 <details>
   <summary> 🔧 Filtros disponibles (20 principales) </summary>
@@ -61,8 +101,9 @@ amp_img/
 ├── ampliacion_lib/        # Librerías de filtros personalizados
 ├── data/
 │   ├── input_images/      # Imágenes originales
-│   ├── processed_images/  # Imágenes ampliadas
-│   └── process_changed/   # Proceso intermedio
+│   └── processed_images/  # Imágenes ampliadas
+│       ├── temp_set/      # Proceso intermedio
+|       └── total_set/     # Set consolidado
 ├── run_img_amp.py         # Script principal
 ├── mixture.py             # Consolidación de sets
 └── README.md
@@ -80,7 +121,7 @@ Este proceso permite generar datasets homogeneos que cumplan con requerimentos d
 - Entrenamiento de modelos de visión por computadora
 - Aumento de imágenes para alimentar redes de imagenes profundo
 - Preparación de datasets robustos ante ruidos, rotación y cambios de iluminación.
-- Entrenamiento multimodal en modelos de LLM qeu incluyen entradas visuales.
+- Entrenamiento multimodal en modelos de LLM que incluyen entradas visuales.
 
 
 ---

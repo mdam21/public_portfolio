@@ -12,7 +12,7 @@ Este proyecto busca automatizar la **recolección de noticias desde medios digit
 - Realizar fact-checking automático
 - Detectar sesgos o contradicciones entre fuentes
 
-Es un puente entre el **scraping tradicional**, la **minería de información** y el uso avanzado de **LLMs como APIs externas** (ej. DeepSeek, OpenAI).
+Es un puente entre el **scraping tradicional**, la **minería de información** y el uso avanzado de **LLMs como APIs externas**, en este caso DeepSeek.
 
 ---
 
@@ -37,14 +37,15 @@ Es un puente entre el **scraping tradicional**, la **minería de información** 
 
 ## 🧠 Arquitectura del sistema
 
+<div class="tree-diagram">
 scrap_project/
 ├── scraper.py # Scraping básico por sitio
 ├── aggregator.py # Comparación entre fuentes
 ├── llm_interface.py # Módulo para conexión con APIs LLM
 ├── prompts/ # Prompts y estrategias de análisis
 ├── logs/ # Historial de resultados
-├── README.md
-
+└── README.md
+</div>
 
 ---
 
