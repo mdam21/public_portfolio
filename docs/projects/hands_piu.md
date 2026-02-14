@@ -4,7 +4,7 @@ title: "Hands_PIU - Plataforma de Baile Interactiva"
 permalink: /projects/hands_piu
 ---
 
-# Hands_PIU – Plataforma Interactiva inspirada en Pump It Up
+# Teclado Interactivo de 5 Letras inspirado en tablero Pump It Up
 
 **Hands_PIU** es un proyecto que replica la experiencia de una plataforma de baile **Pump It Up**, pero adaptada para jugar con las manos. Se compone de una matriz de 5 botones físicos que simulan los steps principales del juego, permitiendo que el jugador interactúe a través de un teclado HID personalizado.
 
@@ -25,7 +25,9 @@ Este proyecto integra hardware, firmware y modelado 3D, buscando una alternativa
     </ul>
   </div>
   <div class="image-block">
-    <img src="{{ '/assets/img/teclado/hands_piu.png' | relative_url }}" alt="Caja impresa de Hands_PIU">
+    <img src="{{ '/assets/img/teclado/hands_piu.png' | relative_url }}" 
+      alt="Caja impresa de Hands_PIU" 
+      class='zoomable'>
   </div>
 </div>
 

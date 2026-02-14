@@ -4,7 +4,7 @@ title: "Sistema de Medición STM"
 permalink: /projects/stm.html
 ---
 
-# Sistema de Medición para estudiar Tunelamiento
+# Sistema de Medición de Conductancia de Tunelamiento
 <div class="content-with-image">
   <div class="text-block">
     <p>

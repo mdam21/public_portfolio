@@ -7,7 +7,7 @@ title: Damián Andrango - Portafolio
 
 <section id="inicio" class="intro">
   <img src="assets/img/banner.png" alt="Encabezado del portafolio de Damián Andrango" class="header-img">
-  <h1> Hola, mi nombre es Damián Andrango</h1>
+  <h1>Damián Andrango</h1>
   <p>Físico aplicado con experiencia en ingeniería práctica, tecnologías emergentes y automatización. Apasionado por combinar ciencia, diseño, hardware y software para resolver problemas reales de forma eficiente e innovadora. </p>
 </section>
 

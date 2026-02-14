@@ -4,7 +4,7 @@ title: Modelado CAD en SolidWorks – modelados_sw
 permalink: /projects/modelados_sw.html
 ---
 
-# 🧩 Modelado CAD en SolidWorks – `modelados_sw`
+# 🧩 Modelado CAD en SolidWorks
 
 Este repositorio reúne una colección diversa de **modelos 3D desarrollados en SolidWorks**, que incluyen:
 
@@ -37,11 +37,11 @@ Este trabajo es resultado tanto de proyectos personales como colaborativos o pro
 ## 📁 Contenido del repositorio
 
 modelados_sw/
-├── soporte_optico/ # Estructuras para experimentos de óptica
-├── cabeza_mortero/ # Boquilla de extrusión tipo gusano
-├── estructuras_impresion/ # Marcos, soportes, guías lineales
-├── modelos_artistico/ # Diseños no funcionales con valor visual
-├── README.md
+├── soporte_optico/         # Estructuras para experimentos de óptica
+├── cabeza_mortero/         # Boquilla de extrusión tipo gusano
+├── estructuras_impresion/  # Marcos, soportes, guías lineales
+├── modelos_artistico/      # Diseños no funcionales con valor visual
+└── README.md
 
 
 ---

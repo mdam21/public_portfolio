@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MCP servidor para  | Damián Andrango – Portafolio</title>
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>MCP servidor para | Damián Andrango – Portafolio</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="MCP servidor para" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Físico aplicado - Electrónica - Programación - Diseño 3D" />
+<meta property="og:description" content="Físico aplicado - Electrónica - Programación - Diseño 3D" />
+<link rel="canonical" href="http://localhost:4000/public_portfolio/projects/mcp_server" />
+<meta property="og:url" content="http://localhost:4000/public_portfolio/projects/mcp_server" />
+<meta property="og:site_name" content="Damián Andrango – Portafolio" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="MCP servidor para" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Físico aplicado - Electrónica - Programación - Diseño 3D","headline":"MCP servidor para","url":"http://localhost:4000/public_portfolio/projects/mcp_server"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/public_portfolio/assets/css/style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <img src="/public_portfolio/assets/img/avatar.jpeg" alt="Damián Andrango" class="avatar">
+      <h1>Damián Andrango</h1>
+      <nav>
+        <ul>
+          <li><a href="/public_portfolio/#inicio">Inicio</a></li>
+          <li><a href="/public_portfolio/#sobremi">Sobre mí</a></li>
+          <li><a href="/public_portfolio/#proyectos">Proyectos</a></li>
+          <li><a href="/public_portfolio/#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+<!--      <img src="/public_portfolio/assets/img/QR.png" alt="QR" class="qr_code"> -->
+    </aside>
+    <main class="content">
+      <h1 id="utilización-de-mcp-para-poder-automatizar-distintos-procesos-en-computadores">Utilización de MCP para poder automatizar distintos procesos en computadores</h1>
+
+<p>Este proyecto lo desarrollé con el objetivo de aprender y entender cómo funcionan los MCP y cómo poder aplicarlos en un entorno real con objetivos reales. Estas herramientas nos permiten comunicarnos con herramientas externas a los LLMs para poder ralizar acciones. Estos sirven principalmente para que las IAs tengan maś herramientas y más contexto sobre lo que están trabajando.</p>
+
+<hr />
+
+<h2 id="procesamiento-y-comandos-utilizados">Procesamiento y comandos utilizados.</h2>
+
+
+    </main>
+  </div>
+  <footer class="site-footer">
+    © 2025 Damián Andrango – Portafolio
+  </footer>
+
+  
+  <!-- esto es para que las imagenes se puedan abrir-->
+    <!-- Lightbox overlay (una sola vez en el layout) -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="close-btn" aria-label="Cerrar" onclick="closeLightbox()">&times;</button>
+    <button class="prev" aria-label="Anterior" onclick="changeImage(-1)">&#10094;</button>
+    <img id="lightbox-img" src="" alt="">
+    <button class="next" aria-label="Siguiente" onclick="changeImage(1)">&#10095;</button>
+    <div id="lightbox-caption"></div>
+  </div>
+
+  <!-- Lightbox JS genérico para cualquier <img class="zoomable"> -->
+  <script>
+    let zoomableImages = [];
+    let currentIndex = 0;
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // Reúne todas las imágenes que quieras ampliar
+      zoomableImages = Array.from(document.querySelectorAll("img.zoomable"));
+
+      // Agrega manejadores de click
+      zoomableImages.forEach((img, index) => {
+        img.style.cursor = "zoom-in";
+        img.addEventListener("click", () => openLightbox(index));
+        // Accesibilidad con teclado
+        img.setAttribute("tabindex", "0");
+        img.setAttribute("role", "button");
+        img.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            openLightbox(index);
+          }
+        });
+      });
+
+      // Cerrar si se hace click en el fondo oscuro
+      const lb = document.getElementById("lightbox");
+      lb.addEventListener("click", (e) => {
+        if (e.target === lb) closeLightbox();
+      });
+    });
+
+    function openLightbox(index) {
+      currentIndex = index;
+      updateLightbox();
+      const lb = document.getElementById("lightbox");
+      lb.style.display = "flex";
+      lb.setAttribute("aria-hidden", "false");
+      // Evita scroll del body cuando está abierto
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      const lb = document.getElementById("lightbox");
+      lb.style.display = "none";
+      lb.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    function changeImage(step) {
+      if (!zoomableImages.length) return;
+      currentIndex = (currentIndex + step + zoomableImages.length) % zoomableImages.length;
+      updateLightbox();
+    }
+
+    function updateLightbox() {
+      const lightboxImg = document.getElementById("lightbox-img");
+      const caption = document.getElementById("lightbox-caption");
+      const img = zoomableImages[currentIndex];
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt || "";
+      caption.textContent = img.alt || "";
+    }
+
+    // Teclado: ESC cierra, flechas navegan
+    document.addEventListener("keydown", function(e) {
+      const lb = document.getElementById("lightbox");
+      if (lb.style.display === "flex") {
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowLeft") changeImage(-1);
+        if (e.key === "ArrowRight") changeImage(1);
+      }
+    });
+  </script>
+
+
+</body>
+</html>
