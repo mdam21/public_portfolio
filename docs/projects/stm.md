@@ -14,7 +14,7 @@ permalink: /projects/stm.html
     </p>
   </div>
   <div class="image-block">
-    <img src="{{ '/assets/img/stm/stm.jpeg' | relative_url }}" alt="Fuente simetrica">
+    <img src="{{ '/assets/img/stm/stm.jpeg' | relative_url }}" alt="Fuente simetrica" class="zoomable">
   </div>
 </div>
 ---
@@ -30,7 +30,7 @@ permalink: /projects/stm.html
     </p>
   </div>
   <div class="image-block">
-    <img src="{{ '/assets/img/stm/fuente_simetrica.png' | relative_url }}" alt="Fuente simétrica">
+    <img src="{{ '/assets/img/stm/fuente_simetrica.png' | relative_url }}" alt="Fuente simétrica" class="zoomable">
   </div>
 </div>
 
@@ -74,7 +74,7 @@ Controlada por un microcontrolador **ESP32**, se conecta a través de un **multi
     </p>
   </div>
   <div class="image-block">
-    <img src="{{ '/assets/img/stm/acercamiento.png' | relative_url }}" alt="Acercamiento rudo con tornillo sin fin">
+    <img src="{{ '/assets/img/stm/acercamiento.png' | relative_url }}" alt="Acercamiento rudo con tornillo sin fin" class="zoomable">
   </div>
 </div>
 

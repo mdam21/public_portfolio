@@ -1,16 +1,18 @@
 # Site settings
-title: "Damián Andrango – Portafolio"
-description: "Físico aplicado - Electrónica - Programación - Diseño 3D"
+title: "D. Andrango | Portafolio digital"
+description: "Fisico especializado en Instrumentación científica - Electrónica - Diseño 3D - Programación - Automatización"
+author: Damián Andrango
+lang: es
 baseurl: "/public_portfolio"
 url: "https://mdam21.github.io"
-theme: "minima"
+
 
 # imagen destacada para redes
 image: "/public_portfolio/assets/img/avatar.jpeg"
 
 # Include CSS
 include:
-  - assets/css
+  - assets
 
 # Build settings
 markdown: "kramdown"
@@ -26,11 +28,13 @@ nav:
   home: /
   about: /about/
   projects: /projects/
-  contact: https://and_damian@outlook.com
+  contact: "mailto:and_damian@outlook.com"
 
 sass:
   style: "compressed"
 
-include:
-  - assets
-
+social:
+  name: Damián Andrango
+  links:
+    - https://github.com/mdam21
+    - www.linkedin.com/in/mdamian-andrango

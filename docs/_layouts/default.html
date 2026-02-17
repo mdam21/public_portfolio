@@ -2,15 +2,20 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ page.title }} | {{ site.title }}</title>
+  <title>{{ page.title }}</title>
   {% seo %}
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
-  <div class="layout">
-    <aside class="sidebar">
+
+  <div class="layout" id="main-layout">
+    
+    <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Mostrar/Ocultar menú">
+      <span class="arrow">&#10094;</span> </button>
+
+    <aside class="sidebar" id="sidebar">
       <img src="{{ '/assets/img/avatar.jpeg' | relative_url }}" alt="Damián Andrango" class="avatar">
       <h1>Damián Andrango</h1>
       <nav>
@@ -18,22 +23,20 @@
           <li><a href="{{ '/' | relative_url }}#inicio">Inicio</a></li>
           <li><a href="{{ '/' | relative_url }}#sobremi">Sobre mí</a></li>
           <li><a href="{{ '/' | relative_url }}#proyectos">Proyectos</a></li>
-          <li><a href="{{ '/' | relative_url }}#contacto">Contacto</a></li>
+          <li><a href="mailto:and_damian@outlook.com">Contacto</a></li>
         </ul>
       </nav>
-<!--      <img src="{{ '/assets/img/QR.png' | relative_url }}" alt="QR" class="qr_code"> -->
     </aside>
+    
     <main class="content">
       {{ content }}
     </main>
   </div>
+
   <footer class="site-footer">
     © {{ site.time | date: '%Y' }} {{ site.title }}
   </footer>
 
-  
-  <!-- esto es para que las imagenes se puedan abrir-->
-    <!-- Lightbox overlay (una sola vez en el layout) -->
   <div id="lightbox" class="lightbox" aria-hidden="true">
     <button class="close-btn" aria-label="Cerrar" onclick="closeLightbox()">&times;</button>
     <button class="prev" aria-label="Anterior" onclick="changeImage(-1)">&#10094;</button>
@@ -42,22 +45,28 @@
     <div id="lightbox-caption"></div>
   </div>
 
-  <!-- Lightbox JS genérico para cualquier <img class="zoomable"> -->
   <script>
+    // --- Lógica del Menú Lateral ---
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggleBtn = document.getElementById("sidebar-toggle");
+      const layout = document.getElementById("main-layout");
+      
+      toggleBtn.addEventListener("click", () => {
+        layout.classList.toggle("sidebar-closed");
+      });
+    });
+
+    // --- Lógica del Lightbox (Tu código original) ---
     let zoomableImages = [];
     let currentIndex = 0;
 
     document.addEventListener("DOMContentLoaded", () => {
-      // Reúne todas las imágenes que quieras ampliar
       zoomableImages = Array.from(document.querySelectorAll("img.zoomable"));
-
-      // Agrega manejadores de click
+      
       zoomableImages.forEach((img, index) => {
         img.style.cursor = "zoom-in";
         img.addEventListener("click", () => openLightbox(index));
-        // Accesibilidad con teclado
         img.setAttribute("tabindex", "0");
-        img.setAttribute("role", "button");
         img.addEventListener("keydown", (e) => {
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
@@ -66,7 +75,6 @@
         });
       });
 
-      // Cerrar si se hace click en el fondo oscuro
       const lb = document.getElementById("lightbox");
       lb.addEventListener("click", (e) => {
         if (e.target === lb) closeLightbox();
@@ -79,7 +87,6 @@
       const lb = document.getElementById("lightbox");
       lb.style.display = "flex";
       lb.setAttribute("aria-hidden", "false");
-      // Evita scroll del body cuando está abierto
       document.body.style.overflow = "hidden";
     }
 
@@ -105,7 +112,6 @@
       caption.textContent = img.alt || "";
     }
 
-    // Teclado: ESC cierra, flechas navegan
     document.addEventListener("keydown", function(e) {
       const lb = document.getElementById("lightbox");
       if (lb.style.display === "flex") {
@@ -115,7 +121,5 @@
       }
     });
   </script>
-
-
 </body>
 </html>

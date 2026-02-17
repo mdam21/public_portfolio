@@ -2,31 +2,37 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Autocompletador de Formularios (auto_ans_mdam) | Damián Andrango – Portafolio</title>
+  <title>Autocompletador de Formularios (auto_ans_mdam)</title>
   <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Autocompletador de Formularios (auto_ans_mdam) | Damián Andrango – Portafolio</title>
+<title>Autocompletador de Formularios (auto_ans_mdam) | D. Andrango Portafolio digital</title>
 <meta name="generator" content="Jekyll v3.10.0" />
 <meta property="og:title" content="Autocompletador de Formularios (auto_ans_mdam)" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="Físico aplicado - Electrónica - Programación - Diseño 3D" />
-<meta property="og:description" content="Físico aplicado - Electrónica - Programación - Diseño 3D" />
+<meta name="author" content="Damián Andrango" />
+<meta property="og:locale" content="es" />
+<meta name="description" content="Fisico especializado en Instrumentación científica - Electrónica - Diseño 3D - Programación - Automatización" />
+<meta property="og:description" content="Fisico especializado en Instrumentación científica - Electrónica - Diseño 3D - Programación - Automatización" />
 <link rel="canonical" href="http://localhost:4000/public_portfolio/projects/auto_ans.html" />
 <meta property="og:url" content="http://localhost:4000/public_portfolio/projects/auto_ans.html" />
-<meta property="og:site_name" content="Damián Andrango – Portafolio" />
+<meta property="og:site_name" content="D. Andrango Portafolio digital" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Autocompletador de Formularios (auto_ans_mdam)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Físico aplicado - Electrónica - Programación - Diseño 3D","headline":"Autocompletador de Formularios (auto_ans_mdam)","url":"http://localhost:4000/public_portfolio/projects/auto_ans.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Damián Andrango"},"description":"Fisico especializado en Instrumentación científica - Electrónica - Diseño 3D - Programación - Automatización","headline":"Autocompletador de Formularios (auto_ans_mdam)","url":"http://localhost:4000/public_portfolio/projects/auto_ans.html"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/public_portfolio/assets/css/style.css">
 </head>
 <body>
-  <div class="layout">
-    <aside class="sidebar">
+
+  <div class="layout" id="main-layout">
+    
+    <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Mostrar/Ocultar menú">
+      <span class="arrow">&#10094;</span> </button>
+
+    <aside class="sidebar" id="sidebar">
       <img src="/public_portfolio/assets/img/avatar.jpeg" alt="Damián Andrango" class="avatar">
       <h1>Damián Andrango</h1>
       <nav>
@@ -34,11 +40,11 @@
           <li><a href="/public_portfolio/#inicio">Inicio</a></li>
           <li><a href="/public_portfolio/#sobremi">Sobre mí</a></li>
           <li><a href="/public_portfolio/#proyectos">Proyectos</a></li>
-          <li><a href="/public_portfolio/#contacto">Contacto</a></li>
+          <li><a href="mailto:and_damian@outlook.com">Contacto</a></li>
         </ul>
       </nav>
-<!--      <img src="/public_portfolio/assets/img/QR.png" alt="QR" class="qr_code"> -->
     </aside>
+    
     <main class="content">
       <h1 id="-autocompletador-de-formularios">🧠 Autocompletador de Formularios</h1>
 
@@ -108,13 +114,11 @@ auto_answer/
 
     </main>
   </div>
+
   <footer class="site-footer">
-    © 2025 Damián Andrango – Portafolio
+    © 2026 D. Andrango | Portafolio digital
   </footer>
 
-  
-  <!-- esto es para que las imagenes se puedan abrir-->
-    <!-- Lightbox overlay (una sola vez en el layout) -->
   <div id="lightbox" class="lightbox" aria-hidden="true">
     <button class="close-btn" aria-label="Cerrar" onclick="closeLightbox()">&times;</button>
     <button class="prev" aria-label="Anterior" onclick="changeImage(-1)">&#10094;</button>
@@ -123,22 +127,28 @@ auto_answer/
     <div id="lightbox-caption"></div>
   </div>
 
-  <!-- Lightbox JS genérico para cualquier <img class="zoomable"> -->
   <script>
+    // --- Lógica del Menú Lateral ---
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggleBtn = document.getElementById("sidebar-toggle");
+      const layout = document.getElementById("main-layout");
+      
+      toggleBtn.addEventListener("click", () => {
+        layout.classList.toggle("sidebar-closed");
+      });
+    });
+
+    // --- Lógica del Lightbox (Tu código original) ---
     let zoomableImages = [];
     let currentIndex = 0;
 
     document.addEventListener("DOMContentLoaded", () => {
-      // Reúne todas las imágenes que quieras ampliar
       zoomableImages = Array.from(document.querySelectorAll("img.zoomable"));
-
-      // Agrega manejadores de click
+      
       zoomableImages.forEach((img, index) => {
         img.style.cursor = "zoom-in";
         img.addEventListener("click", () => openLightbox(index));
-        // Accesibilidad con teclado
         img.setAttribute("tabindex", "0");
-        img.setAttribute("role", "button");
         img.addEventListener("keydown", (e) => {
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
@@ -147,7 +157,6 @@ auto_answer/
         });
       });
 
-      // Cerrar si se hace click en el fondo oscuro
       const lb = document.getElementById("lightbox");
       lb.addEventListener("click", (e) => {
         if (e.target === lb) closeLightbox();
@@ -160,7 +169,6 @@ auto_answer/
       const lb = document.getElementById("lightbox");
       lb.style.display = "flex";
       lb.setAttribute("aria-hidden", "false");
-      // Evita scroll del body cuando está abierto
       document.body.style.overflow = "hidden";
     }
 
@@ -186,7 +194,6 @@ auto_answer/
       caption.textContent = img.alt || "";
     }
 
-    // Teclado: ESC cierra, flechas navegan
     document.addEventListener("keydown", function(e) {
       const lb = document.getElementById("lightbox");
       if (lb.style.display === "flex") {
@@ -196,7 +203,5 @@ auto_answer/
       }
     });
   </script>
-
-
 </body>
 </html>
