@@ -5,17 +5,17 @@ tagline: "Portafolio digital"
 ---
 
 <section id="inicio" class="intro">
-  <img src="{{'/docs/assets/img/banner.png' | relative_url}}" alt="Encabezado del portafolio de Damián Andrango" class="header-img">
+  <img src="{{'/assets/img/banner.png' | relative_url}}" alt="Encabezado del portafolio de Damián Andrango" class="header-img">
   <h1>Damián Andrango</h1>
   <p>Físico aplicado con experiencia en ingeniería práctica, tecnologías emergentes y automatización. Apasionado por combinar ciencia, diseño, hardware y software para resolver problemas reales de forma eficiente e innovadora. </p>
 </section>
 
 --- 
-
 ##  Sobre mí {#sobremi}
 
-Poseo sólida experiencia en:
+Sólida experiencia en:
 
+{% include carrusel.html %}
 
 - Programación en general en Python (desarrollo de programas de inventario/juegos/simuladores), enfoque en imaging (uso de filtros para detección de bordes/objetos/conteos), data analysis e Inteligencia Artificial.
 - Automatización de sistemas con microcontroladores (ESP32, Arduino, Raspberry Pi).
@@ -60,7 +60,8 @@ He trabajado en sectores diversos: educación, manufactura, ciencia aplicada, te
 - **Electrónica:** Diseño de circuitos, PCBs, sensores, prototipado rápido, SMD, soldadura (cautín y pistola de calor), integración con Microcontroladores para automatización.
 - **Microcontroladores y automatización:** Arduino, ESP32, Raspberry Pi, creación de redes IoT LoRa-LoRa, adquisición de imágenes para visión por computadora, además de la integración de agentes IA.
 - **Diseño y prototipado:** SolidWorks, InkScape, OneShape, Ultimaker Cura (impresión 3D), chapa metálica, corte láser, diseño vectorizado.
-- **Software:** Blender, InkScape, KiCad, Solidworks, Windows, Ofimática, Office, LibreOffice, VSCode, Claude, Ubuntu/Linux, Git, automatización de tareas usando Bash y Python.
+- **Software:** OnShape, SolidWorks, Blender, InkScape, KiCad, Windows, Ofimática, Office, LibreOffice, VSCode, Claude, Ubuntu/Linux, Git, automatización de tareas usando Bash y Python.
+
 ---
 
 ## Formación Académica {#formacion}

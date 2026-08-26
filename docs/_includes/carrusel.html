@@ -1,0 +1,65 @@
+<!-- _includes/carrusel.html -->
+<style>
+  .logos-slider-container {
+    overflow: hidden;
+    width: 100%;
+    padding: 30px 0;
+    background: transparent;
+    position: relative;
+    display: block !important; /* Fuerza el renderizado en bloque del contenedor */
+  }
+
+  .logos-slider-track {
+    display: flex !important;  /* Fuerza la alineación horizontal inmediata */
+    flex-direction: row !important;
+    width: max-content;
+    gap: 80px; 
+    animation: scroll-infinite 10s linear infinite;
+  }
+
+  .logos-slider-container:hover .logos-slider-track {
+    animation-play-state: paused;
+  }
+
+  .logo-item {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0 !important; /* Evita que las imágenes colapsen o se aplasten */
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .logo-item img {
+    height: 60px;       
+    width: auto;        
+    display: block;
+    object-fit: contain;
+    background: transparent !important;
+  }
+
+  .logo-item:hover {
+    transform: scale(1.3);
+  }
+
+  @keyframes scroll-infinite {
+  0% { 
+    transform: translateX(0); 
+  }
+  100% { 
+    transform: translateX(-50%); /* Removido el cálculo estático para asegurar transición limpia */
+  }
+  }
+</style>
+
+<div class="logos-slider-container">
+  <div class="logos-slider-track">
+    <!-- SET 1 -->
+    <a href="{{ site.baseurl }}/projects/stm.html" class="logo-item"><img src="{{ site.baseurl }}/assets/img/stm/zoom_disk_tip_sample.svg" alt="STM"></a>
+    <a href="{{ site.baseurl }}/projects/concrete_printer.html" class="logo-item"><img src="{{ site.baseurl }}/assets/img/concrete_printer/imp0.png" alt="Printer"></a>
+    <a href="{{ site.baseurl }}/projects/hands_piu.html" class="logo-item"><img src="{{ site.baseurl }}/assets/img/teclado/hands_piu.png" alt="Keyboard"></a>
+    <!-- SET 2 (Duplicados exactos para continuidad) -->
+    <a href="{{ site.baseurl }}/projects/stm.html" class="logo-item"><img src="{{ site.baseurl }}/assets/img/stm/zoom_disk_tip_sample.svg" alt="STM"></a>
+    <a href="{{ site.baseurl }}/projects/concrete_printer.html" class="logo-item"><img src="{{ site.baseurl }}/assets/img/concrete_printer/imp0.png" alt="Printer"></a>
+    <a href="{{ site.baseurl }}/projects/hands_piu.html" class="logo-item"><img src="{{ site.baseurl }}/assets/img/teclado/hands_piu.png" alt="Keyboard"></a>
+  </div>
+</div>
